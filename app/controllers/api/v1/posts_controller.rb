@@ -10,7 +10,7 @@ class Api::V1::PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        @post = @post.attributes.merge(author: @post.user.name)
+        @post = @post.attributes.merge(author: @post.user.name, comments: @post.comments)
         render json: @post
     rescue ActiveRecord::RecordNotFound
         render json: {error: "Post not found"}, status: 404
