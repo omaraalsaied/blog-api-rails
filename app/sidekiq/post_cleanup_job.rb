@@ -3,9 +3,7 @@ class PostCleanupJob
 
   def perform(post_id)
     post = Post.find(post_id)
-
-    if post.created_at < 1.hours.ago
-      post.destroy
-    end
+    puts "post with id #{post_id} has been deleted"
+    post.destroy
   end
 end
