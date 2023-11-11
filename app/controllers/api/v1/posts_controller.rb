@@ -21,6 +21,7 @@ class Api::V1::PostsController < ApplicationController
         @post = Post.new(valid_params)
         @post.user_id = current_user.id
         if @post.save
+            PostCleanupJob.perform_in(24.hours, @post.id)
             render json: @post, status: 200
         else 
             render json: @post.errors, status: :unprocessable_entity
