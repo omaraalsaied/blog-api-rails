@@ -49,5 +49,6 @@ end
 gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
-
+gem 'sidekiq'
+gem 'redis-rails'
 
