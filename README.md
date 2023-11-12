@@ -24,7 +24,7 @@
 
 1. Run docker build.
 2. Run docker compose up.
-3. In another terminal, run docker compose run web rails db:create, then `docker compose run web rails db:migrate "for first time only".
+3. In another terminal, run docker compose run web rails db:create, then docker compose run web rails db:migrate "for first time only".
 
 ## Services (Job Queues, Cache Servers, Search Engines, etc.)
 
