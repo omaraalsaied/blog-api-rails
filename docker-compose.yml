@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    restart: always
+  db:
+    image: postgres:16
+    container_name: blog-api-postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: devise_jwt_development
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    container_name: blog-api-redis
+    ports:
+      - "6379:6379"
