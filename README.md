@@ -15,7 +15,7 @@
 2. Run gem install rails -v 7.0.8.
 3. Clone the repository.
 4. Run bundle install.
-5. Configure the database in the config/database.ym` file with the username/password of your DB.
+5. Configure the database in the config/database.yml file with the username/password of your DB.
 6. Run rails db:create.
 7. Run rails db:migrate.
 8. Start the project by running rails s.
